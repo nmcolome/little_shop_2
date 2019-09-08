@@ -1,5 +1,10 @@
-<% @item.reviews.each do |review| %>
-  <%= review.title %>
-  <%= review.content %>
-  <%= review.rating %>
-<% end %>
+<div class="reviews">
+  <h2 class="title">Reviews</h2>
+
+  <% @item.reviews.each do |review| %>
+  <div class="review-card">
+    <%= review.rating %> <p class="review-title"><%= review.title %></p>
+    <p><%= review.content %></p>
+  </div>
+  <% end %>
+</div>

@@ -5,6 +5,7 @@ class Seed
     destroy_records
     generate_merchants
     generate_items
+    generate_reviews
   end
 
   def destroy_records
@@ -29,10 +30,22 @@ class Seed
       5.times do
         merchant.items.create!(
           name: Faker::Lorem.sentence,
-          description: Faker::Lorem.paragraph,
+          description: Faker::Lorem.paragraphs,
           price: Faker::Commerce.price,
           image: Faker::LoremFlickr.image,
           inventory: rand(1000)
+        )
+      end
+    end
+  end
+
+  def generate_reviews
+    Item.all.each do |item|
+      2.times do
+        item.reviews.create!(
+          title: Faker::Lorem.sentence,
+          content: Faker::Lorem.paragraphs,
+          rating: rand(1..5)
         )
       end
     end
