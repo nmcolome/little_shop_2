@@ -1,5 +1,6 @@
 <div class="reviews">
   <h2 class="title">Reviews</h2>
+  <%= link_to 'Add review', "/items/#{@item.id}/reviews/new", class: "link regular" %>
 
   <% @item.reviews.each do |review| %>
   <div class="review-card">

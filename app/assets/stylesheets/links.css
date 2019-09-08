@@ -28,3 +28,8 @@
 .inline-links:hover {
   color: #7C4DFF;
 }
+
+.regular {
+  font-size: 100%;
+  font-weight: bold;
+}

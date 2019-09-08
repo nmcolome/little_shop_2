@@ -1,0 +1,14 @@
+<h2 class='page-title'>New Review</h2>
+
+<%= form_tag "/items/#{params[:id]}/reviews" do%>
+  <%= label_tag 'title' %>
+  <%= text_field_tag 'review[title]', nil, placeholder: 'A title for your review...', class: "input" %>
+
+  <%= label_tag 'rating' %>
+  <%= number_field_tag 'review[rating]', nil, min: 1, max: 9, class: "input" %>
+
+  <%= label_tag 'content' %>
+  <%= text_area_tag 'review[content]', nil, placeholder: 'A more detailed review...', class: "input" %>
+
+  <%= submit_tag 'Add review', class: 'button new button-form' %>
+<% end %>
