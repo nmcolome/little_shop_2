@@ -4,9 +4,14 @@ class ReviewsController < ApplicationController
 
   def create
     @item = Item.find(params[:id])
-    @item.reviews.create!(review_params)
+    review = @item.reviews.new(review_params)
 
-    redirect_to "/items/#{@item.id}"
+    if review.save
+      redirect_to "/items/#{@item.id}"
+    else
+      flash.now[:error] = 'Please fill out all required fields.'
+      render :new
+    end
   end
 
   private

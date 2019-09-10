@@ -6,8 +6,5 @@ class Item < ApplicationRecord
 
   enum status: [:active, :inactive]
 
-  validates :name, presence: true
-  validates :price, presence: true
-  validates :image, presence: true
-  validates :inventory, presence: true
+  validates :name, :price, :image, :inventory, presence: true
 end
