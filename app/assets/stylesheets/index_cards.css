@@ -43,17 +43,3 @@
 .pagination span a:hover {
   color: #7C4DFF;
 }
-
-.review-title {
-  font-weight: bold;
-  display: inline;
-}
-
-.review-card {
-  border-bottom: 1px solid #BDBDBD;
-  margin: 24px;
-}
-
-.reviews {
-  margin: 36px 0px;
-}

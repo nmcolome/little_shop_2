@@ -41,7 +41,7 @@ class Seed
 
   def generate_reviews
     Item.all.each do |item|
-      2.times do
+      15.times do
         item.reviews.create!(
           title: Faker::Lorem.sentence,
           content: Faker::Lorem.paragraphs,
