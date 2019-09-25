@@ -1,0 +1,14 @@
+<h2 class='page-title'>Update Review</h2>
+
+<%= form_tag "/items/#{@review.item_id}/reviews/#{@review.id}", method: :patch do %>
+  <%= label_tag 'title' %>
+  <%= text_field_tag 'review[title]', @review.title, class: "input" %>
+
+  <%= label_tag 'rating' %>
+  <%= number_field_tag 'review[rating]', @review.rating, min: 1, max: 9, class: "input" %>
+
+  <%= label_tag 'content' %>
+  <%= text_area_tag 'review[content]', @review.content, class: "input" %>
+
+  <%= submit_tag 'Update', class: 'button new button-form' %>
+<% end %>
