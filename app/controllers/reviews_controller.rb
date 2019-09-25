@@ -24,6 +24,12 @@ class ReviewsController < ApplicationController
     redirect_to "/items/#{params[:id]}"
   end
 
+  def destroy
+    Review.destroy(params[:review_id])
+
+    redirect_to "/items/#{params[:id]}"
+  end
+
   private
 
   def review_params
