@@ -1,0 +1,21 @@
+<h2 class='page-title'>New Review</h2>
+
+<%= form_tag "/items/#{params[:id]}/reviews" do%>
+  <%= label_tag 'title' %>
+  <%= text_field_tag 'review[title]', nil, placeholder: 'A title for your review...', class: "input" %>
+
+  <%= label_tag 'rating' %>
+  <%= number_field_tag 'review[rating]', nil, min: 1, max: 9, class: "input" %>
+  <%# <span class="ratings">
+    <%= check_box_tag 'review[rating]', 1, false, class: "input" %>
+    <%# <%= check_box_tag 'review[rating]', 2, false, class: "input" %> %>
+    <%# <%= check_box_tag 'review[rating]', 3, false, class: "input" %> %>
+    <%# <%= check_box_tag 'review[rating]', 4, false, class: "input" %> %>
+    <%# <%= check_box_tag 'review[rating]', 5, false, class: "input" %> %>
+  <%# </span> %> %>
+
+  <%= label_tag 'content' %>
+  <%= text_area_tag 'review[content]', nil, placeholder: 'A more detailed review...', class: "input" %>
+
+  <%= submit_tag 'Add review', class: 'button new button-form' %>
+<% end %>

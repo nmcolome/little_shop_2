@@ -1,0 +1,36 @@
+<div class="review-section">
+  <div class="stats-container">
+    <div>
+      <h2 class="review-title"><%= @item.reviews.average_rating %> Average Rating</h2>
+      <h2 class="review-title"><%= @item.reviews.count %> Reviews</h2>
+    </div>
+    <div>
+      <h2 class="review-title">Top 3 Reviews</h2>
+      <% @item.reviews.top_reviews.each do |review| %>
+        <p><%= review.rating %> <%= review.title %></p>
+      <% end %>
+    </div>
+    <div>
+      <h2 class="review-title">Bottom 3 Reviews</h2>
+      <% @item.reviews.bottom_reviews.each do |review| %>
+        <p><%= review.rating %> <%= review.title %></p>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="reviews">
+    <h2 class="title">Reviews</h2>
+    <%= link_to 'Add review', "/items/#{@item.id}/reviews/new", class: "link regular" %>
+  
+    <% @reviews.each do |review| %>
+    <div class="review-card">
+      <%= review.rating %> <p class="review-title"><%= review.title %></p>
+      <p><%= review.content %></p>
+      <%= link_to 'Edit Review', "/items/#{@item.id}/reviews/#{review.id}/edit", class: 'text-links block-links' %>
+      <%= link_to 'Delete Review', "/items/#{@item.id}/reviews/#{review.id}", method: :delete, class: 'text-links block-links' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<%= paginate @reviews %>

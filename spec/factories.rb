@@ -15,4 +15,11 @@ FactoryBot.define do
     inventory { 100 }
     merchant
   end
+
+  factory :review do
+    title { 'I liked this product' }
+    content { "I think this product is ok, it's very useful" }
+    rating { 3 }
+    item
+  end
 end

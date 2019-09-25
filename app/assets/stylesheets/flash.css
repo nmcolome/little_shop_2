@@ -1,0 +1,10 @@
+.flash {
+  padding: 16px;
+  font-size: 150%;
+  text-align: center;
+}
+
+.error {
+  background-color: #FFBAB9;
+  color: #D8000C;
+}

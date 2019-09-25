@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MiniShop</title>
+    <title>LittleShop</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -10,13 +10,16 @@
 
   <body>
     <header>
-      <h1>Mini Shop</h1>
+      <h1>Little Shop</h1>
       <%= image_tag 'open.svg', alt: 'logo', class: 'logo' %>
     </header>
     <nav class="nav-container">
       <%= link_to 'Items', '/items', class: 'link' %>
       <%= link_to 'Merchants', '/merchants', class: 'link' %>
     </nav>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "flash #{name}" %>
+    <% end %>
     <section>
       <%= yield %>
     </section>

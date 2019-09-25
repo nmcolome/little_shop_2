@@ -19,12 +19,22 @@
   font-weight: bold;
 }
 
-.inline-links {
+.text-links {
   color: #551A8B;
 }
 
 .link:hover,
 .title-links:hover,
-.inline-links:hover {
+.text-links:hover {
   color: #7C4DFF;
+}
+
+.regular {
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.block-links {
+  display: block;
+  padding: 8px 0 4px 0;
 }

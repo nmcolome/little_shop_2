@@ -9,7 +9,7 @@
       <p class="price">Price: $<%= @item.price %></p>
       <p>Inventory: <%= @item.inventory %></p>
       <p>Status: <%= @item.status %></p>
-      <p>Sold by: <%= link_to @item.merchant.name, "/merchants/#{@item.merchant_id}", class: 'inline-links' %></p>
+      <p>Sold by: <%= link_to @item.merchant.name, "/merchants/#{@item.merchant_id}", class: 'text-links' %></p>
     </div>
     <div class="buttons">
       <% if @item.active? %>
@@ -22,3 +22,5 @@
     </div>
   </div>
 </div>
+
+<%= render './reviews/index' %>

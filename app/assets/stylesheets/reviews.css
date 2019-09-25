@@ -1,0 +1,25 @@
+.review-section {
+  color: #212121;
+}
+
+.review-title {
+  font-weight: bold;
+  margin: 12px 0 24px 0;
+}
+
+.review-card {
+  border-bottom: 1px solid #BDBDBD;
+  padding-bottom: 32px;
+  margin: 24px;
+}
+
+.reviews {
+  margin: 20px 0px;
+}
+
+.stats-container {
+  margin: 24px 0px;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
